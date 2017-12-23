@@ -2,6 +2,22 @@ from os import path
 import database
 
 
+def word_input():
+    word = input("Enter the word to search: ")
+    db = database.create_db(database.resolve_path(), word[0].lower())
+    sorted(db)
+    if not valid_word(word):
+        print("ERROR: Not a proper word")
+    if type(db) == dict:
+        for key in db:
+
+            if key == word:
+                print(db[key])
+                continue
+    '''else:
+        print('ERROR: Not a valid word or Word not in Database ')'''
+
+
 def valid_word(word):
 
     # checking or a word starting with a special character or number
@@ -15,33 +31,5 @@ def valid_word(word):
     return 1
 
 
-def resolve_path():
-    py_path = path.dirname(path.abspath(__file__))
-    temp_path = py_path.split('/')
-    db_path = ""
-
-    for folder in temp_path:
-        if folder == "py_files":
-            break
-        else:
-            db_path += folder + "/"
-    db_path += "database"
-    return db_path
-
-
 # Test Case:
-
-
-word = input("Enter the word to search: ")
-word = word.upper()
-db = database.create_db(resolve_path(), word[0].lower())
-sorted(db)
-if type(db) == dict:
-    for key in db:
-
-        if key == word:
-            print(db[key])
-            continue
-'''else:
-    print('Not a valid word! ')'''
-
+word_input()

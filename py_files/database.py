@@ -18,5 +18,20 @@ def create_db(db_path, char):
         print("ERROR : Data-base Missing")
         return -1
 
+
+def resolve_path():
+    py_path = path.dirname(path.abspath(__file__))
+    temp_path = py_path.split('/')
+    db_path = ""
+
+    for folder in temp_path:
+        if folder == "py_files":
+            break
+        else:
+            db_path += folder + "/"
+    db_path += "database"
+    return db_path
+
+
 # Test case
 #print(create_db('/home/avik/Documents/dictionary', 'a'))
