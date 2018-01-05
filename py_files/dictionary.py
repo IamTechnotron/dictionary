@@ -1,11 +1,11 @@
 from os import path
-import database
+from py_files import database
 
 
 def word_input():
     word = input("Enter the word to search: ")
-    db = database.create_db(database.resolve_path(), word[0].lower())
-    sorted(db)
+    db = database.create_db(word[0].lower())
+    #sorted(db)
 
     if type(db) == dict:
         for key in db:

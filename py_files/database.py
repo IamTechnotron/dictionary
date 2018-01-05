@@ -1,9 +1,8 @@
 from os import path
 
 
-def create_db(db_path, char):
-    db_path += '/'
-    db_path += char
+def create_db(first_letter):
+    db_path = resolve_path(first_letter)
     db = {}
     print('path =' + db_path)
     if path.isfile(db_path):
@@ -19,7 +18,7 @@ def create_db(db_path, char):
         return -1
 
 
-def resolve_path():
+def resolve_path(letter):
     py_path = path.dirname(path.abspath(__file__))
     temp_path = py_path.split('/')
     db_path = ""
@@ -29,7 +28,7 @@ def resolve_path():
             break
         else:
             db_path += folder + "/"
-    db_path += "database"
+    db_path += "db_files/" + letter
     return db_path
 
 
