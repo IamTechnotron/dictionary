@@ -3,9 +3,9 @@ a english dictionary with personalisation to add more words feature!
 
 Run:
 ----
-Fireup terminal.
-go to the directory.
-run ./dictionary.py
+Fireup terminal >
+go to the directory >
+run "./dictionary.py" (without qutoes)
 and enjoy!
 
 Credits:
