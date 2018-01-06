@@ -8,15 +8,19 @@ abb_table = {"adj.": "\t: adjective", "abb.": "\t: abbreviation",  "adv.": "\t: 
 
 def word_input():
     word = input("Enter the word to search: ")
-    db = database.create_db(word[0].lower())
+    db = database.resolve_db(word)
     if type(db) == dict:
-        for key in db:
-
-            if key == word:
-                print(db[key])
-                continue
-    '''else:
-        print('ERROR: Not a valid word or Word not in Database ')'''
+        for keys in db:
+            if type(db[keys]) == list:
+                print(keys)
+                for values in db[keys]:
+                    print(values)
+    else:
+        print('ERROR: Not a valid word or Word not in Database \n')
+        print('Suggested/Similar words:')
+        for x in range(1, 5):
+            print( db[len(db) - x], end='\t')
+        print()
 
 
 def add_word():
@@ -61,4 +65,4 @@ def print_abbreviation_reference():
 
 # Test Cases:
 # add_word()
-# word_input()
+word_input()
