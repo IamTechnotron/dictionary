@@ -57,7 +57,6 @@ def resolve_db(word):
     db_path = resolve_path(first_letter)
     db = []
     found = 0
-    print('path =' + db_path)
     if path.isfile(db_path):
         with open(db_path) as file:
             for line in file:

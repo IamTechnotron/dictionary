@@ -1,6 +1,4 @@
-#!/usr/bin/python3 -u
 from py_files import database
-
 
 abb_table = {"adj.": "\t: adjective", "abb.": "\t: abbreviation",  "adv.": "\t: adverb", "conj.": "\t: conjunction",
              "n.": "\t\t: noun", "pl.": "\t: plural", "p. p.": "\t: prepositional phrase", "prep.": "\t: preposition",
@@ -62,11 +60,3 @@ def print_abbreviation_reference():
     for key in abb_table.keys():
         print(key, abb_table[key])
 
-
-def main():
-    print("\n\nWELCOME TO TERMINAL DICTIONARY\n\n")
-    word_input()
-
-
-if __name__ == "__main__":
-    main()
