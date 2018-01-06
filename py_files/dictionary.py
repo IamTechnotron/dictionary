@@ -1,3 +1,4 @@
+#!/usr/bin/python3 -u
 from py_files import database
 
 
@@ -19,7 +20,7 @@ def word_input():
         print('ERROR: Not a valid word or Word not in Database \n')
         print('Suggested/Similar words:')
         for x in range(1, 5):
-            print( db[len(db) - x], end='\t')
+            print(db[len(db) - x], end='\t')
         print()
 
 
@@ -58,11 +59,14 @@ def add_word():
 
 
 def print_abbreviation_reference():
-    # create a table here and print it
     for key in abb_table.keys():
         print(key, abb_table[key])
 
 
-# Test Cases:
-# add_word()
-word_input()
+def main():
+    print("\n\nWELCOME TO TERMINAL DICTIONARY\n\n")
+    word_input()
+
+
+if __name__ == "__main__":
+    main()

@@ -21,6 +21,11 @@ def word_match(word_1, word_2):
 
 
 def resolve_path(letter):
+    """
+    Finds the current directory and database files
+    :param letter: any letter of english alphabet
+    :return: a string comprised of the path of the file named by the letter
+    """
     letter = letter.lower()
     py_path = path.dirname(path.abspath(__file__))
     temp_path = py_path.split('/')
@@ -80,7 +85,3 @@ def resolve_db(word):
     else:
         print("ERROR : Data-base Missing")
         return -1
-
-
-# Test case
-# print(create_db('/home/avik/Documents/dictionary', 'a'))
